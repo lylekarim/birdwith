@@ -1,0 +1,21 @@
+.navbar {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    transition: all 0.5s linear;
+    &-brand {
+        font-size: 16px;
+    }
+
+    .nav-link {
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-right: 14px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &-scrolled {
+        background: $dark;
+    }
+}

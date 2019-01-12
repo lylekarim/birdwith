@@ -1,0 +1,30 @@
+.blog-posts {
+    .card {
+        margin-bottom: 20px;
+        border-radius: 0px;
+        text-decoration: none;
+        color: $dark;
+
+        &-img-top {
+            height: 250px;
+            background-size: cover;
+        }
+
+        &-body {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        &-title {
+            font-weight: bold;
+            
+            line-height: 26px;
+            color: $dark;
+        }
+
+        &-text {
+            font-size: 14px;
+            opacity: 0.6;
+        }
+    }
+}

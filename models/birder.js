@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const birdSchema = new Schema({
+const birderSchema = new Schema({
   title: { type: String, required: true },
   author: { type: String, required: true },
   description: String,
@@ -11,6 +11,6 @@ const birdSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Bird = mongoose.model("Bird", birdSchema);
+const Birder = mongoose.model("Birder", birderSchema);
 
-module.exports = Bird;
+module.exports = Birder;

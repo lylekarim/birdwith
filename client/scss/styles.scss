@@ -1,0 +1,131 @@
+/*------------------------------------------------------------------
+    Colors
+*/
+
+$white: #ffffff;
+$light: #f5f5f5;
+$dark: #202020;
+$darker: #141414;
+$black: #000000;
+$grey: #797979;
+
+/*------------------------------------------------------------------
+    Bootstrap v4.13
+*/
+
+@import "vendor/bootstrap";
+
+/*------------------------------------------------------------------
+    Font Family
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
+$main-font: 'Raleway', sans-serif;
+
+/*------------------------------------------------------------------
+    Base Styles
+*/
+
+body {
+    position: relative;
+    font-family: $main-font;
+    overflow-x: hidden;
+}
+
+/*------------------------------------------------------------------
+    Utilities
+*/
+
+.bg-light {
+    background-color: $light !important;
+}
+
+/*------------------------------------------------------------------
+    Section
+*/
+
+@import "includes/section";
+
+/*------------------------------------------------------------------
+    Jumbotron
+*/
+
+@import "includes/jumbotron";
+
+/*------------------------------------------------------------------
+     Arrow
+*/
+
+@import "includes/arrow";
+
+/*------------------------------------------------------------------
+    Navbar
+*/
+
+@import "includes/navbar";
+
+/*------------------------------------------------------------------
+    Button
+*/
+
+@import "includes/button";
+
+
+/*------------------------------------------------------------------
+    Link
+*/
+
+@import "includes/link";
+
+/*------------------------------------------------------------------
+    Services
+*/
+
+@import "includes/services";
+
+/*------------------------------------------------------------------
+    Portfolio
+*/
+
+@import "includes/portfolio";
+
+/*------------------------------------------------------------------
+    Testimonial
+*/
+
+@import "includes/testimonials";
+
+/*------------------------------------------------------------------
+    Blog
+*/
+
+@import "includes/blog";
+
+/*------------------------------------------------------------------
+    Contact
+*/
+
+@import "includes/contact";
+
+/*------------------------------------------------------------------
+    Footer
+*/
+
+.footer {
+    padding: 3rem 0;
+    background: $dark;
+
+    .nav {
+        font-size: 10px;
+        
+        &-link {
+            color: $white;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    }
+
+    .copyright {
+        opacity: 0.3;
+    }
+}

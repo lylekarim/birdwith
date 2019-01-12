@@ -13,13 +13,13 @@ import API from "../utils/API";
 
 class Detail extends Component {
   state = {
-    bird: {}
+    birder: {}
   };
-  // When this component mounts, grab the bird with the _id of this.props.match.params.id
-  // e.g. localhost:3000/birds/599dcb67f0f16317844583fc
+  // When this component mounts, grab the birder with the _id of this.props.match.params.id
+  // e.g. localhost:3000/birders/599dcb67f0f16317844583fc
   componentDidMount() {
     API.getBird(this.props.match.params.id)
-      .then(res => this.setState({ bird: res.data }))
+      .then(res => this.setState({ birder: res.data }))
       .catch(err => console.log(err));
   }
 
@@ -33,14 +33,14 @@ class Detail extends Component {
                 p={1}
                 borderRadius={2}
                 boxShadow='0 0 16px rgba(0, 0, 0, .25)'>
-                <Image src={this.state.bird.thumbnail} />
+                <Image src={this.state.birder.thumbnail} />
 
                 <Box px={2}>
                   <Heading as='h3'>
-                    {this.state.bird.title} by {this.state.bird.author}
+                    {this.state.birder.title} by {this.state.birder.author}
                   </Heading>
                   <Text fontSize={0}>
-                    {this.state.bird.description}
+                    {this.state.birder.description}
                   </Text>
                 </Box>
               </Card>
@@ -54,7 +54,7 @@ class Detail extends Component {
             <article>
               <h1>Description</h1>
               <p>
-                {this.state.bird.description}
+                {this.state.birder.description}
               </p>
             </article>
           </Col>

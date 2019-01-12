@@ -1,0 +1,40 @@
+.down-arrow {
+    width: 100px;
+    position: absolute;
+    bottom: 40px;
+    left: calc(50vw - 60px);
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: $light;
+
+        img {
+            opacity: 0.5;
+        }
+    }
+
+    span {
+        font-size: 8px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+    
+    img {
+        transition: all 0.3s ease-in;
+        width: 25px;
+        animation: blink 2s linear infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+    }
+}

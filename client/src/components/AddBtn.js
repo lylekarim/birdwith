@@ -8,7 +8,7 @@ import {
 function AddBtn(props) {
   return (
     <Button cursor='pointer' bg='green' className="add-btn" {...props} role="button" tabIndex="0">
-     Add Bird +
+     Add Birder +
     </Button>
   );
 }

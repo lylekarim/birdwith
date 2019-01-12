@@ -4,12 +4,12 @@ import React from "react";
  import { Container, Row, Col } from "../Grid";
 
 // BirdList renders a bootstrap list item
-export function BirdList({ children }) {
+export function BirderList({ children }) {
   return <ul className="list-group">{children}</ul>;
 }
 
 // BirdListItem renders a bootstrap list item containing data from the Google Birds api call
-export function BirdListItem({
+export function BirderListItem({
   thumbnail,
   title,
   author,
@@ -28,7 +28,7 @@ export function BirdListItem({
           <h3>{title}</h3>
           <p>Authors: {author}</p>
           <a rel="noreferrer noopener" target="_blank" href={href}>
-            Go to bird!
+            Go to birder!
           </a>
           <p>Description: {description}</p>
           <AddBtn onClick={onClick}/>

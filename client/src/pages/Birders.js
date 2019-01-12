@@ -3,55 +3,55 @@ import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
-import { BirdList, BirdListItem } from "../components/BirdList";
+import { BirderList, BirderListItem } from "../components/BirderList";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import { Card } from 'rebass'
 
-class Birds extends Component {
+class Birders extends Component {
   state = {
-    birds: [],
+    birders: [],
     title: "",
     author: "",
     thumbnail: "",
     href: "",
     description: "",
-    birdSearch: "",
-    birdresults: [],
+    birderSearch: "",
+    birderresults: [],
   };
 
   componentDidMount() {
-    this.loadBirds();
-    this.searchBirds("the sun also rises");
+    this.loadBirders();
+    this.searchBirders("the sun also rises");
   }
 
-  searchBirds = query => {
+  searchBirders = query => {
     API.search(query)
-      .then(res => this.setState({ birdresults: res.data.items }))
+      .then(res => this.setState({ birderresults: res.data.items }))
       .catch(err => console.log(err));
   };
 
 
-  addBird = bird => {
-    //  if (bird.title !== this.state.title)
+  addBirder = birder => {
+    //  if (birder.title !== this.state.title)
 
-    API.saveBird(bird)
-      .then(res => this.loadBirds())
+    API.saveBirder(birder)
+      .then(res => this.loadBirders())
       .catch(err => console.log(err));
   }
 
-  loadBirds = () => {
-    API.getBirds()
+  loadBirders = () => {
+    API.getBirders()
       .then(res => {
         console.log(res);
-        return this.setState({ birds: res.data, title: "", author: "", thumbnail: "", description: ""})
+        return this.setState({ birders: res.data, title: "", author: "", thumbnail: "", description: ""})
        })
   
       .catch(err => console.log(err));
   };
 
-deleteBird = id => {
-  API.deleteBird(id)
-    .then(res => this.loadBirds())
+deleteBirder = id => {
+  API.deleteBirder(id)
+    .then(res => this.loadBirders())
     .catch(err => console.log(err));
 };
 
@@ -66,20 +66,20 @@ handleInputChange = event => {
 handleFormSubmit = event => {
   event.preventDefault();
   if (this.state.title && this.state.author) {
-    API.saveBird({
+    API.saveBirder({
       title: this.state.title,
       author: this.state.author,
       thumbnail: this.state.thumbnail,
       description: this.state.description,
 
     })
-      .then(res => this.loadBirds())
+      .then(res => this.loadBirders())
       .catch(err => console.log(err));
   }
   else {
-    API.search(this.state.birdSearch)
+    API.search(this.state.birderSearch)
       .then(res =>
-        this.setState({ birdresults: res.data.items }))
+        this.setState({ birderresults: res.data.items }))
 
       .catch(err => console.log(err));
   };
@@ -93,17 +93,17 @@ render() {
       <Row>
         <Col size="xs-9 sm-10">
 
-          <h2>Search Google Birds</h2>
+          <h2>Search Birders</h2>
           <form>
 
             <Input
-              name="birdSearch"
-              value={this.state.birdSearch}
+              name="birderSearch"
+              value={this.state.birderSearch}
               onChange={this.handleInputChange}
-              placeholder="Search For a Bird"
+              placeholder="Search For a Birder"
             />
             <FormBtn
-              disabled={!(this.state.birdSearch)}
+              disabled={!(this.state.birderSearch)}
               onClick={this.handleFormSubmit}
             >
               Search
@@ -115,33 +115,33 @@ render() {
 
           <h1>Search results</h1>
 
-          {!this.state.birdresults.length ? (
-            <h1 className="text-center">No Birds to Display</h1>
+          {!this.state.birderresults.length ? (
+            <h1 className="text-center">No Birders to Display</h1>
           ) : (
-              <BirdList>
-                {this.state.birdresults.map(birdresult => {
-                  let bird = {
-                    title: birdresult.volumeInfo.title,
-                    author: birdresult.volumeInfo.authors,
-                    description: birdresult.volumeInfo.description,
-                    thumbnail: birdresult.volumeInfo.thumbnail,
+              <BirderList>
+                {this.state.birderresults.map(birderresult => {
+                  let birder = {
+                    title: birderresult.volumeInfo.title,
+                    author: birderresult.volumeInfo.authors,
+                    description: birderresult.volumeInfo.description,
+                    thumbnail: birderresult.volumeInfo.thumbnail,
 
                   }
                   return (
-                    <BirdListItem
-                      key={birdresult.id}
-                      title={birdresult.volumeInfo.title}
-                      thumbnail={birdresult.volumeInfo.imageLinks.thumbnail}
-                      author={birdresult.volumeInfo.authors}
-                      description={birdresult.volumeInfo.description}
-                      href={birdresult.volumeInfo.previewLink}
-                      onClick={() => this.addBird(bird)}>
+                    <BirderListItem
+                      key={birderresult.id}
+                      title={birderresult.volumeInfo.title}
+                      thumbnail={birderresult.volumeInfo.imageLinks.thumbnail}
+                      author={birderresult.volumeInfo.authors}
+                      description={birderresult.volumeInfo.description}
+                      href={birderresult.volumeInfo.previewLink}
+                      onClick={() => this.addBirder(birder)}>
 
-                    </BirdListItem>
+                    </BirderListItem>
 
                   );
                 })}
-              </BirdList>
+              </BirderList>
 
             )}
 
@@ -152,20 +152,20 @@ render() {
 
         <Col size="md-8 sm-12">
 
-          <Card> <h1>My Saved Birds</h1> </Card>
+          <Card> <h1>My Saved Birders</h1> </Card>
 
-          {this.state.birds.length ? (
+          {this.state.birders.length ? (
             <List>
-              {this.state.birds.map(bird => (
+              {this.state.birders.map(birder => (
                 <ListItem
-                  key={bird._id}
-                  srcUrl={bird.thumbnail}
-                  heading={bird.title}
-                  text={bird.description}
-                  onClick={() => this.deleteBird(bird._id)}>
-                  <Link to={"/birds/" + bird._id}>
+                  key={birder._id}
+                  srcUrl={birder.thumbnail}
+                  heading={birder.title}
+                  text={birder.description}
+                  onClick={() => this.deleteBirder(birder._id)}>
+                  <Link to={"/birders/" + birder._id}>
                     <strong>
-                      {bird.title} by {bird.author}
+                      {birder.title} by {birder.author}
                     </strong>
                   </Link>
                 </ListItem>
@@ -177,7 +177,7 @@ render() {
         </Col>
         <Col size="md-4 xs-12">
 
-          <h1>Add a new bird</h1>
+          <h1>Add a new birder</h1>
 
           <form>
             <Input
@@ -208,7 +208,7 @@ render() {
               disabled={!(this.state.author && this.state.title)}
               onClick={this.handleFormSubmit}
             >
-              Submit Bird
+              Submit Birder
               </FormBtn>
           </form>
         </Col>
@@ -218,4 +218,4 @@ render() {
 }
 }
 
-export default Birds;
+export default Birders;

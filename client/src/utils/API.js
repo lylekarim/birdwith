@@ -2,26 +2,26 @@ import axios from "axios";
 
 export default {
   
-    // Gets google birds
+    // Gets google birders
     search: function(query) {
-      return axios.get("https://www.googleapis.com/birds/v1/volumes?q=" + query + "&projection=lite&maxResults=5");
+      return axios.get("https://www.googleapis.com/birders/v1/volumes?q=" + query + "&projection=lite&maxResults=5");
     },
 
 
-  // Gets all birds
-  getBirds: function() {
-    return axios.get("/api/birds");
+  // Gets all birders
+  getBirders: function() {
+    return axios.get("/api/birders");
   },
-  // Gets the bird with the given id
-  getBird: function(id) {
-    return axios.get("/api/birds/" + id);
+  // Gets the birder with the given id
+  getBirder: function(id) {
+    return axios.get("/api/birders/" + id);
   },
-  // Deletes the bird with the given id
-  deleteBird: function(id) {
-    return axios.delete("/api/birds/" + id);
+  // Deletes the birder with the given id
+  deleteBirder: function(id) {
+    return axios.delete("/api/birders/" + id);
   },
-  // Saves a bird to the database
-  saveBird: function(birdData) {
-    return axios.post("/api/birds", birdData);
+  // Saves a birder to the database
+  saveBirder: function(birderData) {
+    return axios.post("/api/birders", birderData);
   }
 };

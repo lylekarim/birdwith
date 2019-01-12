@@ -8,7 +8,7 @@ import {
 function DeleteBtn(props) {
   return (
     <Button bg='gray' m={2}  cursor='pointer' className="delete-btn" {...props} role="button" tabIndex="0">
-    ✗ Delete Bird 
+    ✗ Delete Birder 
     </Button>
   );
 }

@@ -1,0 +1,106 @@
+.portfolio-grid {
+    .portfolio-item {
+        display: block;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        text-decoration: none;
+
+        &:hover {
+            .portfolio-item-info {
+                animation: fadeInUp;
+                animation-duration: 0.6s;
+                animation-direction: alternate;
+                animation-fill-mode: forwards;
+
+                @keyframes fadeInUp {
+                    0% {
+                        transform: translateY(200px);
+                    }
+
+                    100% {
+                        transform: translateY(0px);
+                    }
+                }
+            }
+        }
+
+        &-info {
+            animation: fadeOut;
+            animation-duration: 0.6s;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+            transform: translateY(200px);
+            opacity: 1;
+            height: 100%;
+            padding-bottom: 20px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7) 85%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+
+            @keyframes fadeOut {
+                0% {
+                    transform: translateY(0px);
+                }
+
+                100% {
+                    transform: translateY(200px);
+                }
+            }
+            
+        }
+
+        &-title {
+            margin-bottom: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        &-subtitle {
+            font-size: 10px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: grey;
+        }
+    }
+}
+
+.portfolio-filters {
+    .nav-item {
+        margin-right: 30px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .nav-link {
+        padding: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 2px;   
+        border-bottom: 2px solid rgba(0,0,0,0);
+        border-radius: 0;
+        cursor: pointer;
+
+        &.active {
+            background: transparent;
+            color: $dark;
+            border-bottom: 2px solid $dark;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+}
+
+.portfolio-single-image {
+    height: 500px;
+    margin: 2rem 0;
+    background-size: cover;
+}

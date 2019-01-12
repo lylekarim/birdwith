@@ -1,0 +1,52 @@
+.section {
+    padding: 5rem 0;
+    background-size: cover;
+    background-position: center;
+
+    &-header {
+        padding-bottom: 6rem;
+        &:after {  
+            content: '';
+            position: absolute;
+            left: calc(50vw - 30px);
+            width: 50px;
+            height: 2px;
+            background: $dark;
+        }
+
+        &-inverted {
+            color: white;
+            &:after {  
+                content: '';
+                position: absolute;
+                left: calc(50vw - 30px);
+                width: 50px;
+                height: 2px;
+                background: $white;
+            }
+        }
+    }
+
+    &-title {
+        padding-bottom: 12px;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+}
+
+/*------------------------------------------------------------------
+    Triangle
+*/
+
+.triangle {
+    display: inline-block;
+    margin: 0 5px;
+    vertical-align: middle;
+    width: 60px;
+    height: 30px;
+    border-top: solid 30px rgba(0,0,0,0.1);
+    border-left: solid 30px transparent;
+    border-right: solid 30px transparent;
+}

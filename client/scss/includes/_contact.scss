@@ -1,0 +1,33 @@
+.contact-form {
+    .form-control {
+        margin-bottom: 20px;
+        background: transparent;
+        border: 0px;
+        border-radius: 0px;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(0,0,0,0.2);
+
+        &:focus {
+            border-bottom: 1px solid rgba(0,0,0,0.8);
+        }
+
+        &::placeholder {
+            font-size: 14px;
+        }
+    }
+}
+
+.contact-info {
+    li {
+        margin-bottom: 20px;
+        span {
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: bold;
+            color: $grey;
+            padding-right: 12px;
+        }
+
+        color: $dark;
+    }
+}

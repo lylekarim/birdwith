@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const birdRoutes = require("./birds");
+const birderRoutes = require("./birders");
 
 
-// Bird routes
-router.use("/birds", birdRoutes);
+// Birder routes
+router.use("/birders", birderRoutes);
 router.use('/users', require('./users'));
 
 module.exports = router;
