@@ -1,20 +1,15 @@
+const router = require("express").Router();
+
 // using SendGrid's v3 Node.js Library
 // https://github.com/sendgrid/sendgrid-nodejs
-
-
-const sgMail = require('@sendgrid/mail');
-
+const sgMail = require('@sendgrid/mail'); //sendgrid library to send emails 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-module.exports = (app) => {
-    app.post('/api/send', function (req, res, next) {
-    });
-};
 
-app.get('/send-email', (req, res) => {
+router.post('/send-email', (req, res) => {
 
-    //Get Variables from query string in the search bar
-    const { recipient, sender, topic, text, html } = req.query;
+   // Route to post our form submission to Sendgrid
+const { recipient, sender, topic, text, html } = req.body;
 
     //Sendgrid Data Requirements
     const msg = {
@@ -29,3 +24,4 @@ app.get('/send-email', (req, res) => {
     sgMail.send(msg)
         .then((msg) => console.log(text));
 });
+module.exports = router;

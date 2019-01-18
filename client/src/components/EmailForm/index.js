@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from "../../utils/API";
 import './style.css';
 
 class EmailForm extends Component {
@@ -9,16 +10,18 @@ class EmailForm extends Component {
       sender: '',
       subject: '',
       text: '',
-      html:'',
+      html: '',
     }
   }
 
-  sendEmail = _ => {
+  sendthisEmail = _ => {
     const { email } = this.state;
-    fetch(`http:localhost:4000/send-email?recipient=${email.recipient}&sender=${email.sender}&topic=${email.subject}&text=${email.text}`) //query string url
-      .catch(err => console.error(err))
-  }
 
+    API.sendEmail(email)
+      .then(res => console.log(res))
+      .catch (err => console.log(err));
+  }
+  
   render() {
     const { email } = this.state;
     const spacer = {

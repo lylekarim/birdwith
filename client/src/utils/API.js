@@ -23,5 +23,12 @@ export default {
   // Saves a birder to the database
   saveBirder: function(birderData) {
     return axios.post("/api/birders", birderData);
+  },
+
+  // Saves a birder to the database
+  sendEmail: function(emailData) {
+    return axios.post("/api/email", emailData);
   }
+
+
 };
