@@ -5,10 +5,16 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { BirderList, BirderListItem } from "../components/BirderList";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import { Card } from 'rebass'
+import { Card } from 'rebass';
+import NavTabs from "../components/NavTabs";
+import Home from "./Home";
+import About from "./About";
+import Blog from "./Blog";
+import Contact from "./Contact";
 
 class Birders extends Component {
   state = {
+    currentPage: "Home",
     birders: [],
     title: "",
     author: "",
@@ -24,6 +30,22 @@ class Birders extends Component {
     availability: "",
     language: "",
     comments: "",
+  };
+
+  handlePageChange = page => {
+    this.setState({ currentPage: page });
+  };
+
+  renderPage = () => {
+    if (this.state.currentPage === "Home") {
+      return <Home />;
+    } else if (this.state.currentPage === "About") {
+      return <About />;
+    } else if (this.state.currentPage === "Blog") {
+      return <Blog />;
+    } else {
+      return <Contact />;
+    }
   };
 
   componentDidMount() {
@@ -117,6 +139,13 @@ class Birders extends Component {
   render() {
     return (
       <Container fluid>
+      <Row><Col size="xs-9 sm-10"> <div>
+        <NavTabs
+          currentPage={this.state.currentPage}
+          handlePageChange={this.handlePageChange}
+        />
+        {this.renderPage()}
+      </div></Col></Row>
         <Row>
           <Col size="xs-9 sm-10">
 
