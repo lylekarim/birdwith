@@ -6,22 +6,22 @@ class EmailForm extends Component {
 
   state = {
     email: {
-      recipient: '',
-      sender: '',
+      to: '',
+      from: '',
       subject: '',
       text: '',
-      html: '',
+     // html: '',
     }
   }
 
-  sendthisEmail = _ => {
+  sendEmail = () => {
     const { email } = this.state;
 
     API.sendEmail(email)
       .then(res => console.log(res))
-      .catch (err => console.log(err));
+      .catch(err => console.log(err));
   }
-  
+
   render() {
     const { email } = this.state;
     const spacer = {
@@ -37,12 +37,12 @@ class EmailForm extends Component {
           <label> Recipient </label>
           <br />
           <input value={email.recipient}
-            onChange={e => this.setState({ email: { ...email, recipient: e.target.value } })} />
+            onChange={e => this.setState({ email: { ...email, to: e.target.value } })} />
           <div style={spacer} />
           <label> Sender </label>
           <br />
           <input value={email.sender}
-            onChange={e => this.setState({ email: { ...email, sender: e.target.value } })} />
+            onChange={e => this.setState({ email: { ...email, from: e.target.value } })} />
           <div style={spacer} />
           <label> Subject </label>
           <br />

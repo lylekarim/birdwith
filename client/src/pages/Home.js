@@ -1,19 +1,45 @@
 import React from "react";
+import { Container } from "../components/Grid";
+import { Input } from "../components/Form";
+
 
 const Home = () => (
-  <div>
-    <h1>Home Page</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque velit, lobortis ut magna
-      varius, blandit rhoncus sem. Morbi lacinia nisi ac dui fermentum, sed luctus urna tincidunt.
-      Etiam ut feugiat ex. Cras non risus mi. Curabitur mattis rutrum ipsum, ut aliquet urna
-      imperdiet ac. Sed nec nulla aliquam, bibendum odio eget, vestibulum tortor. Cras rutrum ligula
-      in tincidunt commodo. Morbi sit amet mollis orci, in tristique ex. Donec nec ornare elit.
-      Donec blandit est sed risus feugiat porttitor. Vestibulum molestie hendrerit massa non
-      consequat. Vestibulum vitae lorem tortor. In elementum ultricies tempus. Interdum et malesuada
-      fames ac ante ipsum primis in faucibus.
-    </p>
-  </div>
+  <Container>
+ 
+  <section id="banner" className="parallex-bg section-padding">
+    <div>
+        <div className="intro_text white-text div_zindex">
+          <h1>Welcome to BirdWith</h1>
+            <h5>Find Someone to go Birding With</h5>
+              <div className="search_form">
+                <form action="listing-grid-map.html" method="get">
+                    <div className="form-group select">
+                         <select className="form-control">
+                          <option>Where do you want to go birding?</option>
+                            <option>Real Estate</option>
+                              <option>Restaurant</option>
+                              <option>Real Estate</option>
+                            <option>Health & Fitness</option>
+                            <option>Beauty & Spas</option>
+                              <option>Hotels & Travel</option>
+                              <option>Automotive</option>
+                        </select>
+                      </div>
+                      <div className="form-group">
+                         <Input type="text" className="form-control" placeholder="Locaton"/>
+                      </div>
+                      <div className="form-group search_btn">
+                        <Input type="submit" value="Search" className="btn btn-block"/>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  
+  </section>
+
+
+      </Container>
 );
 
 export default Home;

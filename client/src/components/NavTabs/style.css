@@ -1,6 +1,7 @@
 
-nav-tabs {
-    padding-top:150px;
+header {
+padding-bottom:120px !important;  
+
 }
 
 .navimg {
@@ -28,3 +29,15 @@ nav a:hover {
     color: #d1f507;
     text-decoration: underline;
 }
+
+/*=======================
+	 3. Banner-Search
+==============================*/
+/* #banner {
+	background-image:url(assets/images/1920x800.jpg);
+	padding:200px 0 150px;
+	text-align:center;
+}
+#banner .dark-overlay {
+  background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+} */

@@ -4,6 +4,12 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const cors = require('cors'); 
+var dotenv = require('dotenv');
+
+var something = dotenv.load();
+console.log(something);
+console.log(something.parsed.SENDGRID_API_KEY);
+
 
 
 // Define middleware here
@@ -11,7 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/public"));
+  console.log("running in prod");
+  app.use(express.static("client/build"));
 }
 
 // Define API routes here

@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Birders from "./pages/Birders";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import NavTabs from "./components/NavTabs";
+import Footer from "./components/Footer";
 import EmailForm from "./components/EmailForm";
 
 function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <NavTabs />
         <Switch>
           <Route exact path="/email" component={EmailForm} />
           <Route exact path="/" component={Birders} />
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/birders/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch>
+        <Footer />
       </div>
     </Router>
   );
