@@ -9,7 +9,6 @@ import { Card } from 'rebass';
 import NavTabs from "../components/NavTabs";
 import Home from "./Home";
 import About from "./About";
-import Blog from "./Blog";
 import Contact from "./Contact";
 
 class Birders extends Component {
@@ -41,8 +40,7 @@ class Birders extends Component {
       return <Home />;
     } else if (this.state.currentPage === "About") {
       return <About />;
-    } else if (this.state.currentPage === "Blog") {
-      return <Blog />;
+
     } else {
       return <Contact />;
     }
@@ -139,7 +137,7 @@ class Birders extends Component {
   render() {
     return (
       <Container fluid>
-      <Row><Col size="xs-9 sm-10"> <div>
+      <Row><Col size="xs-12 sm-12"> <div>
         <NavTabs
           currentPage={this.state.currentPage}
           handlePageChange={this.handlePageChange}

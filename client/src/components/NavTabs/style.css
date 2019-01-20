@@ -1,9 +1,4 @@
 
-header {
-padding-bottom:120px !important;  
-
-}
-
 .navimg {
 margin-bottom: 20px;
 opacity: 0.8;
@@ -30,14 +25,22 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/*=======================
-	 3. Banner-Search
-==============================*/
-/* #banner {
-	background-image:url(assets/images/1920x800.jpg);
-	padding:200px 0 150px;
-	text-align:center;
+.nav-tabs {
+    margin-top: 10px;
+    border-bottom: 0px solid #ddd;
 }
-#banner .dark-overlay {
-  background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
-} */
+
+.nav {
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.header_style2 .navbar-nav.dashboard_menu {
+    top: 4px;
+}
+
+.submit_listing {
+    float: right;
+    margin-top: 36px;
+    margin-left: 25px;
+}

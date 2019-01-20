@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors'); 
 var dotenv = require('dotenv');
 
-var something = dotenv.load();
+//var something = dotenv.load();
 //console.log(something);
 
 

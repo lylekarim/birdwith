@@ -681,7 +681,7 @@ table thead th, table thead td {
   width: 98%;
 }
 .logo {
-	margin:22px 0;	
+	margin:8px 0;	
 	transition-duration:0.3s;
    -moz-transition-duration:0.3s;
     -o-transition-duration:0.3s;
@@ -874,20 +874,21 @@ header .navbar-default .navbar-nav li ul.children ul.children {
 	 3. Banner-Search
 ==============================*/
 #banner {
-	background-image:url(../images/1920x800.jpg);
+	background-image:url(../images/1920x1200.jpg);
 	padding:200px 0 150px;
 	text-align:center;
 }
 #banner .dark-overlay {
-  background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+  background: rgba(6, 70, 122, 0.45) none repeat scroll 0 0;
 }
 .intro_text h5 {
 	font-weight:300;
 }
 #banner .search_form {
-  display: table;
-  margin: 45px auto 0;
+  /* display: table; */
+  margin: 30px auto 0;
   width: 1024px;
+  padding-left:200px;
 }
 #banner .search_form .form-group, 
 #intro_map .search_form .form-group {
@@ -3202,7 +3203,7 @@ p.listing_like a {
 
 .header_style2 .navbar.navbar-default{
 	background:#fcfcfc;
-	box-shadow:0px 0px 5px #ccc;
+  box-shadow: 0px 0px 10px #416c8a;
 }
 
 .header_style2 #navigation .nav.navbar-nav a{
