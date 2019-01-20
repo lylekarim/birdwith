@@ -7,8 +7,7 @@ const cors = require('cors');
 var dotenv = require('dotenv');
 
 var something = dotenv.load();
-console.log(something);
-console.log(something.parsed.SENDGRID_API_KEY);
+//console.log(something);
 
 
 
