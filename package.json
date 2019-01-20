@@ -1,7 +1,7 @@
 {
   "name": "birdwith",
   "version": "1.0.0",
-  "description": "Bird With",
+  "description": "so you can bird with friends",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
