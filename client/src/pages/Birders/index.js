@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import { List, ListItem } from "../../components/List";
+import { OwlCard } from "../../components/OwlCard";
+import OwlCarousel from "react-owl-carousel";
+// import { MyOwlCarousel } from "../../components/MyOwlCarousel";
 import { BirderList, BirderListItem } from "../../components/BirderList";
 import { Input, FormBtn } from "../../components/Form";
 import NavTabs from "../../components/NavTabs";
 import Home from "../Home";
 import About from "../About";
 import Contact from "../Contact";
-import OwlCarousel from "react-owl-carousel";
-
-
 
 
 
@@ -122,25 +121,7 @@ class Birders extends Component {
         />
         {this.renderPage()}
       </div></Col></Row>
-      <OwlCarousel
-    className="owl-theme"
-    loop
-    margin={10}
-    nav
->
-    <div className="item"><h4>1</h4></div>
-    <div className="item"><h4>2</h4></div>
-    <div className="item"><h4>3</h4></div>
-    <div className="item"><h4>4</h4></div>
-    <div className="item"><h4>5</h4></div>
-    <div className="item"><h4>6</h4></div>
-    <div className="item"><h4>7</h4></div>
-    <div className="item"><h4>8</h4></div>
-    <div className="item"><h4>9</h4></div>
-    <div className="item"><h4>10</h4></div>
-    <div className="item"><h4>11</h4></div>
-    <div className="item"><h4>12</h4></div>
-</OwlCarousel>
+    
         <Row>
 
           <Col size="md-12 sm-12">
@@ -152,10 +133,22 @@ class Birders extends Component {
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
         </div>     </div>
       
-            {this.state.birders.length ? (
-              <List>
+        
+        <OwlCarousel
+        className="owl-theme"
+        loop
+        margin={10}
+        nav
+        autoplay={true}
+        autoplayHoverPause={true}
+        dots={false}
+    
+    >
+      {/* {this.state.birders.length ? ( */}
+    <div>
                 {this.state.birders.map((birder,index) => (
-                  <ListItem
+              
+              <OwlCard
                     key={birder._id}
                     srcUrl={birder.thumbnail}
                     heading={birder.title}
@@ -169,12 +162,15 @@ class Birders extends Component {
                         {birder.title} by {birder.author}
                       </strong>
                     </Link>
-                  </ListItem>
+                
+                  </OwlCard>
+            
                 ))}
-              </List>
-            ) : (
-                <h3>No Results to Display</h3>
-              )}
+                </div>
+    //   ) : (
+    //  <h4>no results to display</h4>
+    //  )}
+       </OwlCarousel>
   </section>
               </div>
             

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Birders from "./pages/Birders";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
-import Home from "./pages/Home";
 import NavTabs from "./components/NavTabs";
 import Footer from "./components/Footer";
 import EmailForm from "./components/EmailForm";
@@ -15,7 +14,7 @@ function App() {
         <NavTabs />
         <Switch>
           <Route exact path="/email" component={EmailForm} />
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={Birders} />
           <Route exact path="/birders" component={Birders} />
           <Route exact path="/birders/:id" component={Detail} />
           <Route component={NoMatch} />
