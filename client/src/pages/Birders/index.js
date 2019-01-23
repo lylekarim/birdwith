@@ -3,15 +3,15 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { OwlCard } from "../../components/OwlCard";
-import OwlCarousel from "react-owl-carousel";
+import AliceCarousel from 'react-alice-carousel';
 // import { MyOwlCarousel } from "../../components/MyOwlCarousel";
 import { BirderList, BirderListItem } from "../../components/BirderList";
-import { Input, FormBtn } from "../../components/Form";
+import { Input, FormBtn, TextArea } from "../../components/Form";
 import NavTabs from "../../components/NavTabs";
 import Home from "../Home";
 import About from "../About";
 import Contact from "../Contact";
-
+import "react-alice-carousel/lib/alice-carousel.css";
 
 
 class Birders extends Component {
@@ -43,7 +43,8 @@ class Birders extends Component {
       return <Home />;
     } else if (this.state.currentPage === "About") {
       return <About />;
-
+    } else if (this.state.currentPage === "Birders") {
+      return <About />;
     } else {
       return <Contact />;
     }
@@ -83,6 +84,8 @@ class Birders extends Component {
       .catch(err => console.log(err));
   };
 
+
+
   deleteBirder = id => {
     API.deleteBirder(id)
       .then(res => this.loadBirders())
@@ -112,7 +115,36 @@ class Birders extends Component {
 
 
   render() {
+
+const owldivs=  ( 
+
+  this.state.birders.map((birder,index) => (
+  
+          <OwlCard
+                key={birder._id}
+                srcUrl={birder.thumbnail}
+                heading={birder.title}
+                text={birder.description}
+                area={birder.area}
+                interests={birder.interests}
+                id={"birders_"+index}
+                onClick={() => this.deleteBirder(birder._id)}>
+                <Link to={"/birders/" + birder._id}>
+                  <strong>
+                    {birder.title} by {birder.author}
+                  </strong>
+                </Link>
+              </OwlCard>
+            ))
+//   ) : (
+//  <h4>no results to display</h4>
+);
+// console.log('owls')
+// console.log(owldivs)
+
+
     return (
+
       <Container fluid>
       <Row><Col size="xs-12 sm-12"> <div>
         <NavTabs
@@ -134,48 +166,21 @@ class Birders extends Component {
         </div>     </div>
       
         
-        <OwlCarousel
-        className="owl-theme"
+      <AliceCarousel
+         items={owldivs}
         loop
         margin={10}
-        nav
         autoplay={true}
-        autoplayHoverPause={true}
-        dots={false}
+        dotsDisabled={false}
     
     >
-      {/* {this.state.birders.length ? ( */}
-    <div>
-                {this.state.birders.map((birder,index) => (
-              
-              <OwlCard
-                    key={birder._id}
-                    srcUrl={birder.thumbnail}
-                    heading={birder.title}
-                    text={birder.description}
-                    area={birder.area}
-                    interests={birder.interests}
-                    id={"birders_"+index}
-                    onClick={() => this.deleteBirder(birder._id)}>
-                    <Link to={"/birders/" + birder._id}>
-                      <strong>
-                        {birder.title} by {birder.author}
-                      </strong>
-                    </Link>
-                
-                  </OwlCard>
-            
-                ))}
-                </div>
-    //   ) : (
-    //  <h4>no results to display</h4>
-    //  )}
-       </OwlCarousel>
+   
+       </AliceCarousel>
   </section>
               </div>
             
           </Col>
-          {/* <Col size="md-4 xs-12">
+          <Col size="md-4 xs-12">
 
             <h1>Add a new birder</h1>
 
@@ -254,7 +259,7 @@ class Birders extends Component {
                 Submit Birder
               </FormBtn>
             </form>
-          </Col> */}
+          </Col>
         </Row>
         <Row>
           <Col size="xs-9 sm-10">

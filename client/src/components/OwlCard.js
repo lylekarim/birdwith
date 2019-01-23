@@ -12,16 +12,7 @@ export function OwlCard({
 }) {
    
    return (
-    //     <OwlCarousel
-    //     className="owl-theme"
-    //     loop
-    //     margin={10}
-    //     nav
-    //     autoplay={true}
-    //     autoplayHoverPause={true}
-    //     dots={false}
-    
-    // >
+   
      
 <div id={id}>
     <div className="listing_wrap">
@@ -51,6 +42,8 @@ export function OwlCard({
     </div>
     </div>
     // </OwlCarousel>
+
+
     );
 
    
