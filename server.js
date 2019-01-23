@@ -4,7 +4,9 @@ const routes = require("./routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const cors = require('cors'); 
-var dotenv = require('dotenv');
+//var dotenv = require('dotenv');
+
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 
 //var something = dotenv.load();
 //console.log(something);
