@@ -34,6 +34,7 @@ class Birders extends Component {
     comments: "",
   };
 
+
   handlePageChange = page => {
     this.setState({ currentPage: page });
   };
@@ -53,6 +54,15 @@ class Birders extends Component {
   componentDidMount() {
     this.loadBirders();
     this.searchBirders("the sun also rises");
+  }
+
+
+  addBirder = birder => {
+    //  if (birder.title !== this.state.title)
+
+    API.saveBirder(birder)
+    //   .then(res => this.loadBirders())
+    //   .catch(err => console.log(err));
   }
 
   searchBirders = query => {
@@ -102,15 +112,33 @@ class Birders extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
+    // if (this.state.title && this.state.author) {
       
-      API.search(this.state.birderSearch)
-        .then(res =>
-          this.setState({ birderresults: res.data.items }))
+    //   API.search(this.state.birderSearch)
+    //     .then(res =>
+    //       this.setState({ birderresults: res.data.items }))
 
-        .catch(err => console.log(err));
-    };
+    //     .catch(err => console.log(err));
+    // } else 
+    if (this.state.title && this.state.author) {
 
+      API.saveBirder({
+        title: this.state.title,
+        author: this.state.author,
+        thumbnail: this.state.thumbnail,
+        description: this.state.description,
+        interests: this.state.interests,
+        initial: this.state.initial,
+        lastName: this.state.lastName,
+        area: this.state.area,
+        state: this.state.state,
+        availability: this.state.availability,
+        language: this.state.language,
+        comments: this.state.comments,
+
+      })
+      
+    }
   };
 
 
