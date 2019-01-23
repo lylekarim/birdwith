@@ -14,7 +14,7 @@ router.post('/', (req, res) => {
 
     console.log('REQREQREQREQREQ.body', JSON.stringify(req.body));
 
-   // console.log('KEYKEYKEYKEY: ', key)
+    console.log('KEYKEYKEYKEY: ', key)
 
     // Route to post our form submission to Sendgrid
     const { to, from, subject, text,} = req.body;
