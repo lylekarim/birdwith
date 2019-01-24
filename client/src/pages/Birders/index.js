@@ -32,6 +32,19 @@ class Birders extends Component {
     availability: "",
     language: "",
     comments: "",
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1024: {
+        items: 3
+      }
+    },
+
+    currentIndex: 0,
   };
 
 
@@ -113,7 +126,7 @@ class Birders extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     // if (this.state.title && this.state.author) {
-      
+
     //   API.search(this.state.birderSearch)
     //     .then(res =>
     //       this.setState({ birderresults: res.data.items }))
@@ -137,76 +150,89 @@ class Birders extends Component {
         comments: this.state.comments,
 
       })
-      
+
     }
   };
 
+  onSlideChanged = (e) => this.setState({ currentIndex: e.item });
+
+  slideNext = () => this.setState({ currentIndex: this.state.currentIndex + 1 });
+
+  slidePrev = () => this.setState({ currentIndex: this.state.currentIndex - 1 });
 
   render() {
 
-const owldivs=  ( 
 
-  this.state.birders.map((birder,index) => (
-  
-          <OwlCard
-                key={birder._id}
-                srcUrl={birder.thumbnail}
-                heading={birder.title}
-                text={birder.description}
-                area={birder.area}
-                interests={birder.interests}
-                id={"birders_"+index}
-                onClick={() => this.deleteBirder(birder._id)}>
-                <Link to={"/birders/" + birder._id}>
-                  <strong>
-                    {birder.title} by {birder.author}
-                  </strong>
-                </Link>
-              </OwlCard>
-            ))
-//   ) : (
-//  <h4>no results to display</h4>
-);
-// console.log('owls')
-// console.log(owldivs)
+    const owldivs = (
+
+      this.state.birders.map((birder, index) => (
+
+        <OwlCard
+          key={birder._id}
+          srcUrl={birder.thumbnail}
+          heading={birder.title}
+          text={birder.description}
+          area={birder.area}
+          interests={birder.interests}
+          id={"birders_" + index}
+          onClick={() => this.deleteBirder(birder._id)}>
+          <Link to={"/birders/" + birder._id}>
+            <strong>
+              {birder.title} by {birder.author}
+            </strong>
+          </Link>
+        </OwlCard>
+      ))
+      //   ) : (
+      //  <h4>no results to display</h4>
+    );
+    // console.log('owls')
+    // console.log(owldivs)
 
 
     return (
 
       <Container fluid>
-      <Row><Col size="xs-12 sm-12"> <div>
-        <NavTabs
-          currentPage={this.state.currentPage}
-          handlePageChange={this.handlePageChange}
-        />
-        {this.renderPage()}
-      </div></Col></Row>
-    
+        <Row><Col size="xs-12 sm-12"> <div>
+          <NavTabs
+            currentPage={this.state.currentPage}
+            handlePageChange={this.handlePageChange}
+          />
+          {this.renderPage()}
+        </div></Col></Row>
+
         <Row>
 
           <Col size="md-12 sm-12">
-<div>
-          <section id="featured_listings" className="section-padding">
-	<div className="container">
-    	<div className="section-header text-center">
-        	<h2>Featured Listings</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-        </div>     </div>
-      
-        
-      <AliceCarousel
-         items={owldivs}
-        loop
-        margin={10}
-        autoplay={true}
-        dotsDisabled={false}
-    
-    >
-   
-       </AliceCarousel>
-  </section>
-              </div>
-            
+            <div>
+              <section id="featured_listings" className="section-padding">
+                <div className="container">
+                  <div className="section-header text-center">
+                    <h2>Featured Listings</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                  </div>     </div>
+                <h3>Navigation</h3>
+              
+                <button onClick={() => this.slidePrev()}>Prev button</button>
+                <button onClick={() => this.slideNext()}>Next button</button>
+                <h3>React Alice Carousel</h3>
+
+                <AliceCarousel
+                  items={owldivs}
+                  loop
+                  margin={10}
+                  autoPlay={true}
+                  dotsDisabled={true}
+                  responsive={this.state.responsive}
+                  duration={400}
+                  autoPlayInterval={2000}
+                  startIndex = {1}
+                >
+
+                </AliceCarousel>
+              </section>
+            </div>
+
           </Col>
           <Col size="md-4 xs-12">
 
@@ -230,56 +256,56 @@ const owldivs=  (
                 onChange={this.handleInputChange}
                 name="thumbnail"
                 placeholder="Thumbnail (Optional)"
-              /> 
+              />
               <Input
-              value={this.state.initial}
-              onChange={this.handleInputChange}
-              name="initial"
-              placeholder="Initial (Optional)"
-            />
-               <Input
-              value={this.state.lastName}
-              onChange={this.handleInputChange}
-              name="lastName"
-              placeholder="Last Name"
-            />
-             <Input
-              value={this.state.area}
-              onChange={this.handleInputChange}
-              name="area"
-              placeholder="Area"
-            />
-            <Input
-              value={this.state.state}
-              onChange={this.handleInputChange}
-              name="state"
-              placeholder="State"
-            />
-            <Input
-              value={this.state.availability}
-              onChange={this.handleInputChange}
-              name="availability"
-              placeholder="Availability"
-            />
-             <Input
-              value={this.state.interests}
-              onChange={this.handleInputChange}
-              name="interests"
-              placeholder="Interests"
-            />
+                value={this.state.initial}
+                onChange={this.handleInputChange}
+                name="initial"
+                placeholder="Initial (Optional)"
+              />
               <Input
-              value={this.state.language}
-              onChange={this.handleInputChange}
-              name="language"
-              placeholder="Language(s)"
-            />
+                value={this.state.lastName}
+                onChange={this.handleInputChange}
+                name="lastName"
+                placeholder="Last Name"
+              />
+              <Input
+                value={this.state.area}
+                onChange={this.handleInputChange}
+                name="area"
+                placeholder="Area"
+              />
+              <Input
+                value={this.state.state}
+                onChange={this.handleInputChange}
+                name="state"
+                placeholder="State"
+              />
+              <Input
+                value={this.state.availability}
+                onChange={this.handleInputChange}
+                name="availability"
+                placeholder="Availability"
+              />
+              <Input
+                value={this.state.interests}
+                onChange={this.handleInputChange}
+                name="interests"
+                placeholder="Interests"
+              />
+              <Input
+                value={this.state.language}
+                onChange={this.handleInputChange}
+                name="language"
+                placeholder="Language(s)"
+              />
               <TextArea
                 value={this.state.comments}
                 onChange={this.handleInputChange}
                 name="comments"
                 placeholder="Comments (Optional)"
               />
-             
+
               <FormBtn
                 disabled={!(this.state.author && this.state.title)}
                 onClick={this.handleFormSubmit}

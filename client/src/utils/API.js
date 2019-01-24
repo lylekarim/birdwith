@@ -2,10 +2,15 @@ import axios from "axios";
 
 export default {
   
-    // Gets google birders
+    // // Gets google birders
     search: function(query) {
       return axios.get("https://www.googleapis.com/birders/v1/volumes?q=" + query + "&projection=lite&maxResults=5");
     },
+
+ // get recent birds from location from eBird
+//  search: function(query) {
+//   return axios.get("/api/recentbirds", recentBirdData);
+// },
 
 
   // Gets all birders
