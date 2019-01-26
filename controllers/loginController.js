@@ -1,5 +1,6 @@
 const db = require("../models");
-
+const Birder = require("../models/birder");
+const BirderSession = require("../models/BirderSession");
 // Defining methods for the loginController
 module.exports = {
 
@@ -10,25 +11,12 @@ module.exports = {
 //    console.log("body = " + JSON.stringify(req.body));
     const { body } = req;
     const {
-      firstName,
-      lastName,
+    
       password
     } = body;
     let { email } = body;
 
 
-    if (!firstName) {
-      return res.send({
-        success: false,
-        message: 'ERROR: You must specify a first name.'
-      });
-    };
-    if (!lastName) {
-      return res.send({
-        success: false,
-        message: 'ERROR: You must specify a last name.'
-      });
-    };
     if (!email) {
       return res.send({
         success: false,
@@ -64,8 +52,6 @@ module.exports = {
 
     const newBirder = new Birder();
     newBirder.email = email;
-    newBirder.firstName = firstName;
-    newBirder.lastName = lastName;
     newBirder.password = newBirder.generateHash(password);
     newBirder.save((err, Birder) => {
       if (err) {
@@ -90,6 +76,7 @@ module.exports = {
 //* Process Birder Sign-in and create auth token for them
 //************************************************************/
   signIn: (req, res) => {
+    console.log("Signing in....");
     const { body } = req;
     const { password } = body;
     let { email } = body;
@@ -139,7 +126,7 @@ module.exports = {
       };
 
 
-      const birderSession = new birderSession();
+      const birderSession = new BirderSession();
       birderSession.birderId = birder._id;
       birderSession.save((err, doc) => {
         if (err) {

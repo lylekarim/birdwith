@@ -17,27 +17,27 @@ router
   .delete(birdersController.remove);
 
 // API Routes
-// Matches with "/api/signup"
+// Matches with "/api/birders/signup"
 router
   .route("/signup")
   .post(loginController.signUp);
 
 
-// Matches with "/api/signin"
+// Matches with "/api/birders/signin"
 router
   .route("/signin")
   .post(loginController.signIn);
 
 
-// Matches with "/api/verify"
+// Matches with "/api/birders/verify"
 router
   .route("/verify")
   .post(loginController.verify);
 
 
-// Matches with "/api/logout"
+// Matches with "/api/birders/logout"
 router
-  .route("api/logout")
+  .route("/logout")
   .post(loginController.logout);
 
 

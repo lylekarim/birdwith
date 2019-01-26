@@ -173,8 +173,6 @@ class Birders extends Component {
 
     }
 
-
-
   onSlideChanged = (e) => this.setState({ currentIndex: e.item });
 
   slideNext = () => this.setState({ currentIndex: this.state.currentIndex + 1 });

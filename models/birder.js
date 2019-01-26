@@ -3,13 +3,11 @@ const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const birderSchema = new Schema({
-  firstName: { type: String, required: true },
-  lastName: { type: String, required: true },
   email: { type: String, required: true },
   password: { type: String, required: true },
   isDeleted:  { type: Boolean, default: false },
-  title: { type: String, required: true },
-  author: { type: String, required: true },
+  title: { type: String},
+  author: { type: String},
   description: String,
   thumbnail: { type: String, default: "https://placehold.it/300x300" },
   href: String,

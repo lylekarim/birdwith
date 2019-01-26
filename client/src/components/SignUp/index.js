@@ -5,7 +5,7 @@ import { FormBtn, Input } from '../Form';
 import { FontAwesomeIcon } from 'react-fontawesome';
 
 
-class LogIn extends Component {
+class SignUp extends Component {
   state = {
     isLoggedIn: false,
   };
@@ -77,11 +77,11 @@ class LogIn extends Component {
                     <Input className="form-control" type="password" name="password" id="login_Password" placeholder="Password" onChange={this.handleInputChange} />
                   </div>
                   <div className="form-group">
-                    <FormBtn className="btn btn-block" value="Login" onClick={this.handleFormSubmit}>Login</FormBtn>
+                    <FormBtn className="btn btn-block" value="Login" onClick={this.handleFormSubmit}>Join BirdWith</FormBtn>
                   </div>
                 </form>
-                    <p>Already have an account? <a href="signin.html">Sign In</a></p>
-                    <div className="back_home"><a href="index.html" className="btn outline-btn btn-sm"><FontAwesomeIcon icon="angle-double-left" /> Back to Home</a></div>
+                    <p>Already have an account? <a href="/login">Sign In</a></p>
+                    {/* <div className="back_home"><a href="index.html" className="btn outline-btn btn-sm"><FontAwesomeIcon icon="angle-double-left" /> Back to Home</a></div> */}
                 </div>
             </div>
         </div>
@@ -93,5 +93,5 @@ class LogIn extends Component {
   }
 }
 
-export default LogIn;
+export default SignUp;
 

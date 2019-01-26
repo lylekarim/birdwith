@@ -52,12 +52,12 @@ class App extends Component {
             <Route exact path="/birders/:id" component={Detail} />
             <Route exact path="/main" render={() => (
               this.state.isLoggedIn ? (
-                <Redirect to="/auth/main" />
+                <Redirect to="/" />
               ) : (
                   <LogIn handleLoginStatus={this.handleLoginStatus} />
                 ))} />
 
-            <Route exact path="/auth/main" component={Birders} />
+            {/* <Route exact path="/" component={Birders} /> */}
             <Route component={NoMatch} />
 
           </Switch>

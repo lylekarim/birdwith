@@ -40,7 +40,7 @@ class LogIn extends Component {
           this.setState({ isLoggedIn: true, });
           this.setState({ loginMsg: res.data.message });
           window.localStorage.setItem("SMC_authkey", res.data.token);
-          window.location.assign('/auth/main');
+          window.location.assign('/');
         } else {
           console.log("in failure handle");
           this.setState({ isLoggedIn: false });
@@ -77,11 +77,11 @@ class LogIn extends Component {
                     <FormBtn className="btn btn-block" value="Login" onClick={this.handleFormSubmit}>Login</FormBtn>
                   </div>
                 </form>
-                <p>Don't have an account? <a href="signup.html">Signup Here</a></p>
-                <p><a href="lost-password.html">Lost your password?</a></p>
-                <div className="back_home"><a href="index.html" className="btn outline-btn btn-sm"><FontAwesomeIcon icon="angle-double-left" />
+                <p>Don't have an account? <a href="/signup">Signup Here</a></p>
+                <p><a href="/lost-password">Lost your password?</a></p>
+                {/* <div className="back_home"><a href="index.html" className="btn outline-btn btn-sm"><FontAwesomeIcon icon="angle-double-left" />
                 
-                Back to Home</a></div>
+                Back to Home</a></div> */}
               </div>
             </div>
           </div>

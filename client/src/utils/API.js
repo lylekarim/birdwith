@@ -4,14 +4,14 @@ export default {
   
      // Search  for the term provided 
     getUser: (query) => {
-      return axios.post("/api/signin", query);
+      return axios.post("/api/birders/signin", query);
     },
     createUser: (query) => {
-      return axios.post("/api/signup", query);
+      return axios.post("/api/birders/signup", query);
     },
     checkAuth: function(query) {
       console.log("Query in API = " + JSON.stringify(query));
-      return axios.post("/api/verify", query);
+      return axios.post("/api/birders/verify", query);
     },
   
   
