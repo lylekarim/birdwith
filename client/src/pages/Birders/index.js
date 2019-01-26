@@ -229,14 +229,10 @@ class Birders extends Component {
               <section id="featured_listings" className="section-padding">
                 <div className="container">
                   <div className="section-header text-center">
-                    <h2>Featured Listings</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                 
+<h2>Featured Birders, Bird-Watchers and Twitchers</h2>
                   </div>     </div>
-                <h3>Navigation</h3>
-              
-                <button onClick={() => this.slidePrev()}>Prev button</button>
-                <button onClick={() => this.slideNext()}>Next button</button>
-                <h3>React Alice Carousel</h3>
+            
 
                 <AliceCarousel
                   items={owldivs}

@@ -85,11 +85,22 @@ return (
 
   <section id="listing_category" className="section-padding">
 	<div className="container">
-    	<div className="section-header text-center">
+	<div className="section-header text-left">
+	<h3>Birder.</h3> <p>The acceptable term used to describe the person who seriously pursues the hobby of birding. May be professional or amateur.</p>
+
+<h3>Birding.</h3> <p>A hobby in which individuals enjoy the challenge of bird study, listing, or other general activities involving bird life.</p>
+
+<h3>Bird-watcher.</h3> <p>A rather ambiguous term used to describe the person who watches birds for any reason at all, and should not be used to refer to the serious birder.</p>
+
+<h3>Twitcher</h3>
+<p>Twitcher is a British term used to mean 'the pursuit of a previously located rare bird.' In North America it is more often called chasing, though the British usage is starting to catch on there, especially among younger birders. </p>
+
+<h3>Waster</h3>
+<p>Another British term, typically used to describe someone who spends their days birding as opposed to, say, working. In North America this phenomenon is more often referred to as Citizen Science, a notably more positive term, probably attributable to the better overall weather.</p>
+</div>
+	<div className="section-header text-center" >
         	<h2>What are you interested in? </h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.</p>
-        </div>
+                  </div>
     	<div id="category_slider2">
         	<div className="owl-carousel owl-theme">
             	<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
@@ -100,7 +111,7 @@ return (
                         	<span className="category_listing_n">20</span>
                             <img src="assets/images/category-icon1.png" alt="image" />
                         </div>
-	                    <p>Real Estate</p>
+	                    <p>Rare Birds</p>
                     </a>
                 </div>
                 
@@ -110,7 +121,7 @@ return (
                         	<span className="category_listing_n">32</span>
                             <img src="assets/images/category-icon2.png" alt="image" />
                         </div>
-	                    <p>Restaurant</p>
+	                    <p>Hiking</p>
                     </a>
                 </div>
                 
@@ -120,7 +131,7 @@ return (
                         	<span className="category_listing_n">18</span>
                             <img src="assets/images/category-icon3.png" alt="image" />
                         </div>
-	                    <p>Health & Fitness</p>
+	                    <p>Lister</p>
                     </a>
                 </div>
                 
@@ -130,7 +141,7 @@ return (
                         	<span className="category_listing_n">15</span>
                             <img src="assets/images/category-icon4.png" alt="image" />
                         </div>
-                        <p>Beauty & Spas</p>
+                        <p>Photography</p>
                     </a>
                 </div>
                 
@@ -140,29 +151,28 @@ return (
                         	<span className="category_listing_n">15</span>
                             <img src="assets/images/category-icon5.png" alt="image" />
                         </div>
-                        <p>Hotels & Travel</p>
+                        <p>Birding by Ear</p>
                     </a>
                 </div>
-                
+				<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+                	<a href="#">
+    	            	<div className="category_icon">
+                        	<span className="category_listing_n">10</span>
+                            <img src="assets/images/category-icon7.png" alt="image" />
+                        </div>
+	                    <p>Warblers</p>
+                    </a>
+                </div>
                 <div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
                 	<a href="#">
     	            	<div className="category_icon">
                         	<span className="category_listing_n">32</span>
                             <img src="assets/images/category-icon6.png" alt="image" />
                         </div>
-	                    <p>Automotive</p>
+	                    <p>Bird by Car</p>
                     </a>
                 </div>
                 
-                <div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
-                	<a href="#">
-    	            	<div className="category_icon">
-                        	<span className="category_listing_n">10</span>
-                            <img src="assets/images/category-icon7.png" alt="image" />
-                        </div>
-	                    <p>Event</p>
-                    </a>
-                </div>
             </div>
         </div>        
     </div>
@@ -173,17 +183,17 @@ return (
 
 <!--  Map--> */}
 
-<section id="intro_map" className="section-padding">
+{/* <section id="intro_map" className="section-padding">
 	<div id="map-container" className="fullwidth-home-map">
     	<div id="map" data-map-zoom="9">
 			 {/* <!-- map-here --> */}
 		
-        </div>
+        {/* </div> */}
     	
 
-</div>
+{/* // </div> */} 
 	{/* <div className="dark-overlay"></div> */}
-</section>
+{/* // </section> */}
 
 
 
