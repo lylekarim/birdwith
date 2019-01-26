@@ -1,6 +1,6 @@
 import React from "react";
 import "./style.css";
-
+import { FontAwesomeIcon } from 'react-fontawesome';
 
 function NavTabs(props) {
   return (
@@ -57,29 +57,41 @@ function NavTabs(props) {
     {/* </ul> */}
             {/* <ul className="nav navbar-nav affix-top"> */}
              
-              <li className="menu-item-has-children"><a href="#">Pages</a> <span className="arrow"></span>
+              {/* <li className="menu-item-has-children"><a href="#">Pages</a> <span className="arrow"></span>
                  <ul className="sub-menu">
                     <li><a href="about-us.html">About Us</a></li>
                     <li><a href="how-it-work.html">How it Work</a></li>
                     <li><a href="404-error.html">404 Error</a></li>
                 </ul> 
-              </li>
+              </li> */}
              
-              <li className="menu-item-has-children"><a href="#">User Panel</a> <span className="arrow"></span>
+              {/* <li className="menu-item-has-children"><a href="#">User Panel</a> <span className="arrow"></span>
                  <ul className="sub-menu">
                     <li><a href="dashboard-reviews.html">Reviews</a></li>
                     <li><a href="dashboard-my-profile.html">My Profile</a></li>
                 </ul> 
-              </li>
+              </li> */}
                
             </ul>
             <ul className="nav navbar-nav dashboard_menu affix-top">
-                <li><a href="signin.html">Sign In</a></li>
+            <li className="nav-item">
+        <a
+          href="#login"
+          onClick={() => props.handlePageChange("Log In")}
+          className={props.currentPage === "Log In" ? "nav-link active" : "nav-link"}
+        >
+          Sign In
+        </a>
+      </li>
             </ul>
           
-            <div className="submit_listing">
-                <a href="signup.html" className="btn outline-btn"><i className="fa fa-plus-circle"></i> Join BirdWith</a>
-            </div>
+            {/* <div className="submit_listing">
+                <a href="#signup" 
+                  onClick={() => props.handlePageChange("Join BirdWith")}
+                className={props.currentPage === "Join BirdWith" ? "nav-link active btn outline-btn" : "nav-link btn outline-btn" }
+                
+                ><FontAwesomeIcon icon="plus-circle" /> Join BirdWith</a>
+            </div> */}
             
           </div>
            
@@ -92,3 +104,4 @@ function NavTabs(props) {
 }
 
 export default NavTabs;
+

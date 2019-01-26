@@ -11,11 +11,16 @@ import NavTabs from "../../components/NavTabs";
 import Home from "../Home";
 import About from "../About";
 import Contact from "../Contact";
+import LogIn from '../../components/LogIn';
+import LogOut from '../../components/LogOut';
+import SignUp from '../../components/SignUp';
 import "react-alice-carousel/lib/alice-carousel.css";
 
 
 class Birders extends Component {
   state = {
+    email: "",
+    password:"",
     currentPage: "Home",
     birders: [],
     title: "",
@@ -58,13 +63,33 @@ class Birders extends Component {
     } else if (this.state.currentPage === "About") {
       return <About />;
     } else if (this.state.currentPage === "Birders") {
-      return <About />;
+      return <Birders/>;
+    } else if (this.state.currentPage === "Log In") {
+      return <LogIn />;
+    } else if (this.state.currentPage === "Sign Up") {
+      return <SignUp />;
     } else {
       return <Contact />;
     }
   };
 
   componentDidMount() {
+    {
+      let readToken = window.localStorage.getItem("SMC_authkey");
+      let query = {
+        token: readToken
+      };
+      API.checkAuth(query)
+        .then(res => {
+          if (res.data.success) {
+            this.setState({ isLoggedIn: true, });
+          } else {
+            this.setState({ isLoggedIn: false });
+            window.location.assign('/login');
+          };
+        })
+        .catch(err => console.log(err));
+    }
     this.loadBirders();
     this.searchBirders("the sun also rises");
   }
@@ -87,7 +112,7 @@ class Birders extends Component {
   loadBirders = () => {
     API.getBirders()
       .then(res => {
-        console.log(res);
+      //  console.log(res);
         return this.setState({
           birders: res.data,
           title: "",
@@ -108,7 +133,6 @@ class Birders extends Component {
   };
 
 
-
   deleteBirder = id => {
     API.deleteBirder(id)
       .then(res => this.loadBirders())
@@ -125,17 +149,13 @@ class Birders extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // if (this.state.title && this.state.author) {
+    // if (this.state.loginEmail && this.state.loginPassword) {
 
-    //   API.search(this.state.birderSearch)
-    //     .then(res =>
-    //       this.setState({ birderresults: res.data.items }))
-
-    //     .catch(err => console.log(err));
-    // } else 
-    if (this.state.title && this.state.author) {
+    //  } else if  (this.state.title && this.state.author) {
 
       API.saveBirder({
+       email: this.state.email,
+       password: this.state.password,
         title: this.state.title,
         author: this.state.author,
         thumbnail: this.state.thumbnail,
@@ -152,7 +172,8 @@ class Birders extends Component {
       })
 
     }
-  };
+
+
 
   onSlideChanged = (e) => this.setState({ currentIndex: e.item });
 
@@ -239,6 +260,18 @@ class Birders extends Component {
             <h1>Add a new birder</h1>
 
             <form>
+            <Input
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                name="email"
+                placeholder="Email (required)"
+              />
+              <Input
+                value={this.state.password}
+                onChange={this.handleInputChange}
+                name="password"
+                placeholder="password(required)"
+              />
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}

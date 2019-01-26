@@ -2,15 +2,23 @@ import axios from "axios";
 
 export default {
   
+     // Search  for the term provided 
+    getUser: (query) => {
+      return axios.post("/api/signin", query);
+    },
+    createUser: (query) => {
+      return axios.post("/api/signup", query);
+    },
+    checkAuth: function(query) {
+      console.log("Query in API = " + JSON.stringify(query));
+      return axios.post("/api/verify", query);
+    },
+  
+  
     // // Gets google birders
     search: function(query) {
       return axios.get("https://www.googleapis.com/birders/v1/volumes?q=" + query + "&projection=lite&maxResults=5");
     },
-
- // get recent birds from location from eBird
-//  search: function(query) {
-//   return axios.get("/api/recentbirds", recentBirdData);
-// },
 
 
   // Gets all birders
@@ -30,7 +38,7 @@ export default {
     return axios.post("/api/birders", birderData);
   },
 
-  // Saves a birder to the database
+  // Sends an email
   sendEmail: function(emailData) {
     return axios.post("/api/email", emailData);
   }

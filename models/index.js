@@ -1,4 +1,4 @@
 module.exports = {
-  User: require("./user"),
+  BirderSession: require("./BirderSession"),
   Birder: require("./birder")
 };

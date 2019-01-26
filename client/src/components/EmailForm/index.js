@@ -7,7 +7,7 @@ class EmailForm extends Component {
   state = {
     email: {
       to: '',
-      from: '',
+      from: 'admin@birdwith.com',
       subject: '',
       text: '',
      // html: '',

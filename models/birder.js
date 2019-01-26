@@ -1,7 +1,13 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const birderSchema = new Schema({
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+  isDeleted:  { type: Boolean, default: false },
   title: { type: String, required: true },
   author: { type: String, required: true },
   description: String,
@@ -10,13 +16,27 @@ const birderSchema = new Schema({
   isSaved: { type: Boolean, default: true },
   date: { type: Date, default: Date.now },
   initial: String,
-  lastName: String,
   area: String,
+  interests: String,
   state: String,
   availability: String,
   language: String,
   comments: String,
+
 });
+
+
+
+
+birderSchema.methods.generateHash = (password) => {
+  return bcrypt.hashSync(password, bcrypt.genSaltSync(8));
+};
+
+
+birderSchema.methods.validPassword = (password, storedPW) => {
+  return bcrypt.compareSync(password, storedPW);
+};
+
 
 const Birder = mongoose.model("Birder", birderSchema);
 
