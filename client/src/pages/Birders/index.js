@@ -154,8 +154,7 @@ class Birders extends Component {
     //  } else if  (this.state.title && this.state.author) {
 
       API.saveBirder({
-       email: this.state.email,
-       password: this.state.password,
+    
         title: this.state.title,
         author: this.state.author,
         thumbnail: this.state.thumbnail,
@@ -183,7 +182,7 @@ class Birders extends Component {
 
 
     const owldivs = (
-
+      
       this.state.birders.map((birder, index) => (
 
         <OwlCard
@@ -193,9 +192,9 @@ class Birders extends Component {
           text={birder.description}
           area={birder.area}
           interests={birder.interests}
-          id={"birders_" + index}
-          onClick={() => this.deleteBirder(birder._id)}>
-          <Link to={"/birders/" + birder._id}>
+          id={birder._id}
+          onClick={() => window.location("/something")}>
+          <Link to={birder._id}>
             <strong>
               {birder.title} by {birder.author}
             </strong>
@@ -236,12 +235,12 @@ class Birders extends Component {
                   items={owldivs}
                   loop
                   margin={10}
-                  autoPlay={true}
+                  autoPlay={false}
                   dotsDisabled={true}
                   responsive={this.state.responsive}
                   duration={400}
                   autoPlayInterval={2000}
-                  startIndex = {1}
+                  startIndex = {10}
                 >
 
                 </AliceCarousel>

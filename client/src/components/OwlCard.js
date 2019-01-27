@@ -28,7 +28,7 @@ export function OwlCard({
             <div className="post_category">
                 <a href="#">{interests}</a>
             </div>
-            <h4><a href="#">{heading}</a></h4>
+            <h4><a href={`${id}`}>{heading}</a></h4>
             <p>{text}</p>
 
             <div className="listing_review_info">

@@ -17,8 +17,8 @@ class SignUp extends Component {
     this.setState({
       [name]: value
     });
-    console.log("name = " + name);
-    console.log("value = " + value);
+   // console.log("name = " + name);
+   // console.log("value = " + value);
   };
 
 
@@ -28,7 +28,7 @@ class SignUp extends Component {
       email: this.state.email,
       password: this.state.password
     });
-    console.log("state = " + JSON.stringify(this.state));
+   // console.log("state = " + JSON.stringify(this.state));
   };
 
 
@@ -36,16 +36,16 @@ class SignUp extends Component {
     console.log("query = " + JSON.stringify(query));
     API.createUser(query)
       .then(res => {
-        console.log("LOGIN: res = " + JSON.stringify(res));
+      //  console.log("LOGIN: res = " + JSON.stringify(res));
         if (res.data.success) {
-          console.log("in success handle");
+       //   console.log("in success handle");
           window.location.assign('/login');
           // this.setState({ loginStatus: true, });
           // this.props.handleLoginStatus(this.state.loginStatus, this.state.loginEmail);
           // this.setState({ isLoggedIn: true, });
           // this.setState({ loginMsg: res.data.message });
         } else {
-          console.log("in failure handle");
+         // console.log("in failure handle");
           window.location.assign('/signup');
           // this.setState({ loginStatus: false });
           // this.props.handleLoginStatus(this.state.loginStatus, this.state.loginEmail);

@@ -5,7 +5,7 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import NavTabs from "./components/NavTabs";
 import Footer from "./components/Footer";
-import EmailForm from "./components/EmailForm";
+//import EmailForm from "./components/EmailForm";
 import LogIn from './components/LogIn';
 import LogOut from './components/LogOut';
 import SignUp from './components/SignUp';
@@ -48,8 +48,8 @@ class App extends Component {
             <Route exact path="/login" component={LogIn} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/logout" component={LogOut} />
-            <Route exact path="/email" component={EmailForm} />
-            <Route exact path="/birders/:id" component={Detail} />
+            {/* <Route exact path="/email" component={EmailForm} /> */}
+            <Route exact path="/:id" component={Detail} />
             <Route exact path="/main" render={() => (
               this.state.isLoggedIn ? (
                 <Redirect to="/" />
