@@ -7,7 +7,7 @@ const path = require("path");
 router.route("/")
   .get(birdersController.findAll)
   .post(birdersController.create);
-  
+
 
 // Matches with "/api/birders/:id"
 router
@@ -15,6 +15,7 @@ router
   .get(birdersController.findById)
   .put(birdersController.update)
   .delete(birdersController.remove);
+
 
 // API Routes
 // Matches with "/api/birders/signup"

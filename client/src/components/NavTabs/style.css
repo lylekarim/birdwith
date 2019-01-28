@@ -1,4 +1,4 @@
-
+/* 
 .navimg {
 margin-bottom: 20px;
 opacity: 0.8;
@@ -10,11 +10,11 @@ height: 100px;
 background-size: cover;
 overflow: hidden;
 /* position:absolute; */
-top:0;
+/* top:0;
 left:0;
 z-index:1;
 
-}
+} */ */
 
 nav a {
  color: #FFFFFF;   

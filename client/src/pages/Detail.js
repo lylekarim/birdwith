@@ -37,13 +37,13 @@ class Detail extends Component {
 
 
         render() {
-           const logintoken = this.state.logintoken;
+      
             const { email } = this.state;
             email.to = this.state.birder.email;
             email.subject =  this.state.birder.title + "sent you a message through BirdWith" ;
           //  const { contactinfo } =  "Click here to reply to" + token;
             const { replytext } = email.text;
-            email.text = "Click here to reply to " + "https://enigmatic-taiga-42636.herokuapp.com/" + this.state.logintoken;
+            email.text = "Click here to reply to https://enigmatic-taiga-42636.herokuapp.com/" + this.state.logintoken;
 
 
             const textArea = {
@@ -67,11 +67,11 @@ class Detail extends Component {
                                 <div className="col-md-8">
                                     <article className="article_wrap single_post">
                                         <div className="post-thumbnail">
-                                            <img src={this.state.birder.thumbnail} alt="birder image" />
+                                            <img src={this.state.birder.thumbnail} alt="birderpic" />
                                         </div>
                                         <div className="entry_meta">
                                             <span className="meta_m"><i className="fa fa-eye"></i> 48 Views</span>
-                                            <span className="meta_m"><i className="fa fa-heart-o"></i> <a href="#">4 Likes</a></span>
+                                            <span className="meta_m"><i className="fa fa-heart-o"></i> 4 Likes</span>
                                         </div>
                                         <div className="entry-desc">
                                             <div className="entry-content">
@@ -81,7 +81,7 @@ class Detail extends Component {
                                         </div>
                                         <div className="post_tag">
                                             <span>Interests:</span>
-                                            <a href="#">  {this.state.birder.interests}</a>
+                                            <a href="/interests">  {this.state.birder.interests}</a>
 
                                         </div>
                                         <Link to="/">← Back to Birds</Link>
@@ -117,6 +117,7 @@ class Detail extends Component {
 
                                             <div className="form-group">
                                                 <button className="btn" onClick={this.sendEmail}> Send Email </button>
+                                                
                                             </div>
                                         </form>
                                     </div>
@@ -132,17 +133,17 @@ class Detail extends Component {
                                                 <li className="comment">
                                                     <div className="comment-body">
                                                         <div className="comment-author">
-                                                            <img className="avatar" src="assets/images/100x100.jpg" alt="image" />
+                                                            <img className="avatar" src="assets/images/100x100.jpg" alt="100x100" />
                                                             <span className="fn">John Smith</span>
                                                         </div>
-                                                        <div className="comment-meta commentmetadata"> <a href="#">Feb 23, 2016 at 12:52 pm</a> </div>
+                                                        <div className="comment-meta commentmetadata"> Feb 23, 2016 at 12:52 pm </div>
                                                         <div className="comment-content">
                                                             <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
                                                             sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                         Ut enim ad minima veniam, quis nostrum exercitationem</p>
                                                         </div>
                                                         <div className="reply">
-                                                            <a href="#" className="btn-link"><i className="fa fa-reply" aria-hidden="true"></i> Reply</a>
+                                                         <i className="fa fa-reply" aria-hidden="true"></i> Reply
                                                         </div>
                                                     </div>
 
@@ -150,17 +151,17 @@ class Detail extends Component {
                                                         <li className="comment">
                                                             <div className="comment-body">
                                                                 <div className="comment-author">
-                                                                    <img className="avatar" src="assets/images/100x100.jpg" alt="image" />
+                                                                    <img className="avatar" src="assets/images/100x100.jpg" alt="100x100" />
                                                                     <span className="fn">John Smith</span>
                                                                 </div>
-                                                                <div className="comment-meta commentmetadata"> <a href="#">Feb 23, 2016 at 12:52 pm</a> </div>
+                                                                <div className="comment-meta commentmetadata"> Feb 23, 2016 at 12:52 pm</div>
                                                                 <div className="comment-content">
                                                                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
                                                                     sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
                                         Ut enim ad minima veniam, quis nostrum exercitationem</p>
                                                                 </div>
                                                                 <div className="reply">
-                                                                    <a href="#" className="btn-link"><i className="fa fa-reply" aria-hidden="true"></i> Reply</a>
+                                                                  <i className="fa fa-reply" aria-hidden="true"></i> Reply
                                                                 </div>
                                                             </div>
                                                         </li>

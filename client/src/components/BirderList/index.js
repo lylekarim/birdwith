@@ -2,6 +2,7 @@ import React from "react";
  import Thumbnail from "../Thumbnail";
  import AddBtn from "../AddBtn";  
  import { Container, Row, Col } from "../Grid";
+ import { Link } from "react-router-dom";
 
 // BirdList renders a bootstrap list item
 export function BirderList({ children }) {
@@ -16,6 +17,7 @@ export function BirderListItem({
   href,
   description,
   onClick,
+  id,
 }) {
   return (
     <li className="list-group-item">
@@ -26,7 +28,12 @@ export function BirderListItem({
         </Col>
         <Col size="xs-8 sm-9">
           <h3>{title}</h3>
-          <p>Authors: {author}</p>
+          <Link to={id}>
+            <strong>
+            {author}
+            </strong>
+          </Link>
+
           <a rel="noreferrer noopener" target="_blank" href={href}>
             Go to birder!
           </a>

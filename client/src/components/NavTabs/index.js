@@ -8,7 +8,7 @@ function NavTabs(props) {
     <nav className="navbar navbar-default navbar-fixed-top affix-top" data-spy="affix" data-offset-top="10">
         <div className="container">
           <div className="navbar-header">
-            <div className="logo"> <a href="index.html"><img width="250" src="./assets/images/logo_large_transparentbg.png" alt="image"/></a> </div>
+            <div className="logo"> <a href="index.html"><img width="250" src="./assets/images/logo_large_transparentbg.png" alt="logo"/></a> </div>
             <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" className="navbar-toggle collapsed" type="button"> 
                 <span className="sr-only">Toggle navigation</span> 
                 <span className="icon-bar"></span> 
@@ -20,7 +20,7 @@ function NavTabs(props) {
           <ul className="nav nav-tabs navbar-nav affix-top">
       <li className="nav-item menu-item">
         <a
-          href="#home"
+          href="/"
           onClick={() => props.handlePageChange("Home")}
           className={props.currentPage === "Home" ? "nav-link active" : "nav-link"}
         >
@@ -29,7 +29,7 @@ function NavTabs(props) {
       </li>
       <li className="nav-item">
         <a
-          href="#about"
+          href="/about"
           onClick={() => props.handlePageChange("About")}
           className={props.currentPage === "About" ? "nav-link active" : "nav-link"}
         >
@@ -38,7 +38,7 @@ function NavTabs(props) {
       </li>
       <li className="nav-item">
         <a
-          href="#birders"
+          href="/birders"
           onClick={() => props.handlePageChange("Birders")}
           className={props.currentPage === "Birders" ? "nav-link active" : "nav-link"}
         >
@@ -47,7 +47,7 @@ function NavTabs(props) {
       </li>
       <li className="nav-item">
         <a
-          href="#contact"
+          href="/contact"
           onClick={() => props.handlePageChange("Contact")}
           className={props.currentPage === "Contact" ? "nav-link active" : "nav-link"}
         >
@@ -76,7 +76,7 @@ function NavTabs(props) {
             <ul className="nav navbar-nav dashboard_menu affix-top">
             <li className="nav-item">
         <a
-          href="#login"
+          href="/login"
           onClick={() => props.handlePageChange("Log In")}
           className={props.currentPage === "Log In" ? "nav-link active" : "nav-link"}
         >
@@ -84,14 +84,26 @@ function NavTabs(props) {
         </a>
       </li>
             </ul>
-          
-            {/* <div className="submit_listing">
-                <a href="#signup" 
+            <ul className="nav navbar-nav dashboard_menu affix-top">
+            <li className="nav-item">
+        <a
+          href="/logout"
+          onClick={() => props.handlePageChange("Log Out")}
+          className={props.currentPage === "Log Out" ? "nav-link active" : "nav-link"}
+        >
+          Sign Out
+        </a>
+      </li>
+            </ul>  
+            <div className="submit_listing">
+                <a href="/signup" 
                   onClick={() => props.handlePageChange("Join BirdWith")}
                 className={props.currentPage === "Join BirdWith" ? "nav-link active btn outline-btn" : "nav-link btn outline-btn" }
                 
-                ><FontAwesomeIcon icon="plus-circle" /> Join BirdWith</a>
-            </div> */}
+                >
+                {/* <FontAwesomeIcon icon="plus-circle" /> */}
+                 Join BirdWith</a>
+            </div>
             
           </div>
            
