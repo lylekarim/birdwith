@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export function OwlCard({
     srcUrl,
@@ -28,7 +28,12 @@ export function OwlCard({
             <div className="post_category">
                 <a href="#">{interests}</a>
             </div>
-            <h4><a href={`${id}`}>{heading}</a></h4>
+             <Link to={id}>
+            <strong>
+              {heading}
+            </strong>
+          </Link>
+            {/* <h4><a href={`birders/${id}`}>{heading}</a></h4> */}
             <p>{text}</p>
 
             <div className="listing_review_info">

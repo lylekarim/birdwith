@@ -25,7 +25,7 @@ class App extends Component {
       this.setState({ isLoggedIn: false });
       this.setState({ loginEmail: passedEmail });
     };
-    console.log("APP: state = " + JSON.stringify(this.state));
+  //  console.log("APP: state = " + JSON.stringify(this.state));
   };
 
 

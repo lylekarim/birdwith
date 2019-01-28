@@ -194,11 +194,11 @@ class Birders extends Component {
           interests={birder.interests}
           id={birder._id}
           onClick={() => window.location("/something")}>
-          <Link to={birder._id}>
+          {/* <Link to={birder._id}>
             <strong>
               {birder.title} by {birder.author}
             </strong>
-          </Link>
+          </Link> */}
         </OwlCard>
       ))
       //   ) : (
@@ -240,7 +240,7 @@ class Birders extends Component {
                   responsive={this.state.responsive}
                   duration={400}
                   autoPlayInterval={2000}
-                  startIndex = {10}
+                  startIndex = {75}
                 >
 
                 </AliceCarousel>

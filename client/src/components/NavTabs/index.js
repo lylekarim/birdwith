@@ -8,7 +8,7 @@ function NavTabs(props) {
     <nav className="navbar navbar-default navbar-fixed-top affix-top" data-spy="affix" data-offset-top="10">
         <div className="container">
           <div className="navbar-header">
-            <div className="logo"> <a href="index.html"><img width="250" src="assets/images/logo_large_transparentbg.png" alt="image"/></a> </div>
+            <div className="logo"> <a href="index.html"><img width="250" src="./assets/images/logo_large_transparentbg.png" alt="image"/></a> </div>
             <button id="menu_slide" data-target="#navigation" aria-expanded="false" data-toggle="collapse" className="navbar-toggle collapsed" type="button"> 
                 <span className="sr-only">Toggle navigation</span> 
                 <span className="icon-bar"></span> 

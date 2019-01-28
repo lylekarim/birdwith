@@ -94,9 +94,6 @@ return (
 
 <h3>Twitcher</h3>
 <p>Twitcher is a British term used to mean 'the pursuit of a previously located rare bird.' In North America it is more often called chasing, though the British usage is starting to catch on there, especially among younger birders. </p>
-
-<h3>Waster</h3>
-<p>Another British term, typically used to describe someone who spends their days birding as opposed to, say, working. In North America this phenomenon is more often referred to as <h3>Citizen Science</h3>, a notably more positive term, probably attributable to the better overall weather.</p>
 </div>
 	<div className="section-header text-center" >
         	<h2>What are you interested in? </h2>
@@ -109,7 +106,7 @@ return (
                 	<a href="#">
     	            	<div className="category_icon">
                         	<span className="category_listing_n">20</span>
-                            <img src="assets/images/category-icon1.png" alt="image" />
+                            <img src="assets/images/category-icon1.png" alt="category_thing" />
                         </div>
 	                    <p>Rare Birds</p>
                     </a>

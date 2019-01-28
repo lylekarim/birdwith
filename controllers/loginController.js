@@ -76,12 +76,12 @@ module.exports = {
 //* Process Birder Sign-in and create auth token for them
 //************************************************************/
   signIn: (req, res) => {
-    console.log("Signing in....");
+   // console.log("Signing in....");
     const { body } = req;
     const { password } = body;
     let { email } = body;
 
-    console.log("email = " + email + "  password = " + password);
+    //console.log("email = " + email + "  password = " + password);
 
     if (!email) {
       return res.send({
@@ -154,15 +154,15 @@ module.exports = {
   verify: (req, res) => {
     const { body } = req;
     const { token } = body;
-    console.log(req);
-    console.log("Token = " + token);
+    //console.log(req);
+    //console.log("Token = " + token);
 
     BirderSession.find({
       _id: token,
       isDeleted: false
     }, (err, sessions) => {
       if (err) {
-        console.log("fail 1");
+       // console.log("fail 1");
         return res.send({
           success: false,
           message: "ERROR:  Unable to obtain Birder token."
@@ -171,13 +171,13 @@ module.exports = {
 
 
       if (sessions.length != 1) {
-       console.log("Session length = " + sessions.length);
+      // console.log("Session length = " + sessions.length);
         return res.send({
           success: false,
           message: "ERROR:  Unable to verify session."
         });
       } else {
-         console.log("success 3");
+      //   console.log("success 3");
         return res.send({
           success: true,
           message: "Successfully verified session token."
