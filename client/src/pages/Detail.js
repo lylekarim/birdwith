@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../utils/API";
+// import "./style.css";
 
 class Detail extends Component {
     state = {
@@ -91,12 +92,12 @@ class Detail extends Component {
                                     <div className="comment-respond">
                                         <h4 className="block-head">Contact {this.state.birder.title}</h4>
                                         <form method="get" className="comment-form">
-                                            <div className="form-group">
+                                            <div className="hidden form-group">
                                                 <label>To:</label>
                                                 <input placeholder="To" value={email.recipient} />
                                             </div>
 
-                                            <div className="form-group">
+                                            <div className="hidden form-group">
                                                 <label>From:</label>
                                                 <input placeholder="From" value={email.sender} />
                                             </div>
