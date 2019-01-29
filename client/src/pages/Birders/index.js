@@ -267,7 +267,7 @@ class Birders extends Component {
                     items={owldivs}
                     loop
                     margin={10}
-                    autoPlay={false}
+                    autoPlay={true}
                     dotsDisabled={true}
                     responsive={this.state.responsive}
                     duration={400}
