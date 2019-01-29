@@ -1,9 +1,12 @@
 
+.listing_img{
 
+    max-height:300px;
+}
     .listing_wrap {
         border: 1px solid #dedede;
         border-radius: 3px;
-        margin: 0 auto auto 40px;
+        margin: 0 20px auto 40px;
         overflow: hidden;
         position: relative;
       }
