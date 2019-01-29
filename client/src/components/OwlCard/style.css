@@ -1,0 +1,34 @@
+
+
+    .listing_wrap {
+        border: 1px solid #dedede;
+        border-radius: 3px;
+        margin: 0 auto auto 40px;
+        overflow: hidden;
+        position: relative;
+      }
+      .listing_header {
+          margin:0 auto 30px;
+          padding:10px 0;
+          border-top:#eee solid 1px;
+          border-bottom:#eee solid 1px;
+          display:table;
+          width:100%;
+      }
+      .listing_header h5 {
+          font-weight:400;
+          float:left;
+      }
+
+      .alice-carousel__wrapper {
+        position: relative;
+        width: 100%;
+        height: 600px;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      div.listing_info p {
+        min-height: 40px;
+
+      }

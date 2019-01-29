@@ -24,6 +24,8 @@ class Birders extends Component {
     birders: [],
     title: "",
     author: "",
+    available: "",
+    reviews: "",
     thumbnail: "",
     href: "",
     description: "",
@@ -149,8 +151,9 @@ class Birders extends Component {
           lastName: "",
           area: "",
           state: "",
-          availability: "",
+          available: "",
           language: "",
+          reviews: "",
           comments: "",
         })
       })
@@ -194,7 +197,7 @@ class Birders extends Component {
         lastName: this.state.lastName,
         area: this.state.area,
         state: this.state.state,
-        availability: this.state.availability,
+        available: this.state.available,
         language: this.state.language,
         comments: this.state.comments,
 
@@ -218,7 +221,10 @@ class Birders extends Component {
           <OwlCard
             key={birder._id}
             srcUrl={birder.thumbnail}
-            heading={birder.title}
+            heading={birder.author}
+            available={birder.available}
+            language={birder.language}
+            reviews={birder.reviews}
             text={birder.description}
             area={birder.area}
             interests={birder.interests}
@@ -261,7 +267,7 @@ class Birders extends Component {
                     items={owldivs}
                     loop
                     margin={10}
-                    autoPlay={true}
+                    autoPlay={false}
                     dotsDisabled={true}
                     responsive={this.state.responsive}
                     duration={400}
@@ -276,7 +282,7 @@ class Birders extends Component {
             </Col>
             <Col size="md-4 xs-12">
 
-              <h1>Add a new birder</h1>
+              <h1>Add to your Profile</h1>
 
               <form>
                 <Input
@@ -334,7 +340,7 @@ class Birders extends Component {
                   placeholder="State"
                 />
                 <Input
-                  value={this.state.availability}
+                  value={this.state.available}
                   onChange={this.handleInputChange}
                   name="availability"
                   placeholder="Availability"
