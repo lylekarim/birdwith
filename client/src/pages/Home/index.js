@@ -14,7 +14,7 @@ function Home (props) {
 			  <h1>Find Someone to BirdWith</h1>
 	   
 				  <div className="search_form">
-					<form action="listing-grid-map.html" method="get">
+					<form action="/" method="get">
 						<div className="form-group select">
 							 <select className="form-control">
 							  <option>Where do you want to go birding?</option>
