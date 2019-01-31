@@ -11,7 +11,6 @@ import Home from "../Home";
 import About from "../About";
 import Contact from "../Contact";
 import LogIn from '../../components/LogIn';
-import Thumbnail from '../../components/Thumbnail';
 import SignUp from '../../components/SignUp';
 import "react-alice-carousel/lib/alice-carousel.css";
 

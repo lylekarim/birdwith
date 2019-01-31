@@ -9,7 +9,7 @@ const birderSchema = new Schema({
   title: { type: String},
   author: { type: String},
   description: String,
-  thumbnail: { type: String, default: "https://placehold.it/300x300" },
+  thumbnail: { type: String, default: "https://images.unsplash.com/photo-1533120288147-db238c263aa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" },
   href: String,
   isSaved: { type: Boolean, default: true },
   date: { type: Date, default: Date.now },

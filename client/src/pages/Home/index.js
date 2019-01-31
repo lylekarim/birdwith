@@ -1,7 +1,6 @@
 import React from "react";
-import { Container } from "../../components/Grid";
-import { Input } from "../../components/Form";
-import { Map } from "../../components/Map";
+import Thumbnail from '../../components/Thumbnail';
+
 import "./style.css";
 
 function Home (props) {
@@ -97,9 +96,13 @@ function Home (props) {
 					  </div>
 			<div id="category_slider2">
 				<div className="owl-carousel owl-theme">
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
-	
-	
+		
+					<div className="item" 
+					// style={{ backgroundImage: `url(require("assets/images/horned_lark_greatbg.jpg"))` }}
+					>
+		
+				
+
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">20</span>
@@ -109,7 +112,7 @@ function Home (props) {
 						</a>
 					</div>
 					
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/willow_ptarmigan.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">32</span>
@@ -119,7 +122,7 @@ function Home (props) {
 						</a>
 					</div>
 					
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/chestnut_backed_chicadee.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">18</span>
@@ -129,7 +132,7 @@ function Home (props) {
 						</a>
 					</div>
 					
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/bridled_titmouse.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">15</span>
@@ -139,7 +142,7 @@ function Home (props) {
 						</a>
 					</div>
 					
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/roadrunner.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">15</span>
@@ -148,7 +151,7 @@ function Home (props) {
 							<p>Birding by Ear</p>
 						</a>
 					</div>
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/quail_covey.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">10</span>
@@ -157,7 +160,7 @@ function Home (props) {
 							<p>Warblers</p>
 						</a>
 					</div>
-					<div className="item" style={{ backgroundImage: `url(require("assets/images/400x530.jpg"))` }}>
+					<div className="item" style={{ backgroundImage: `url(require("assets/images/harlequins.jpg"))` }}>
 						<a href="#">
 							<div className="category_icon">
 								<span className="category_listing_n">32</span>
